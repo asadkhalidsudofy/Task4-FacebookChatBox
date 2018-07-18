@@ -1,0 +1,496 @@
+body .mainWrapper .mainChatBox .header, body .mainWrapper .mainChatBox .output {
+  padding: 10px; }
+
+body .mainWrapper .mainChatBox .output .date {
+  color: #9a9ea5;
+  font-size: 12px;
+  margin-bottom: 10px;
+  text-align: center; }
+
+body .mainWrapper .mainChatBox .myself {
+  display: grid;
+  grid-template-columns: 1fr 2.25fr;
+  margin-bottom: 10px; }
+
+body .mainWrapper .mainChatBox .output .user {
+  color: grey;
+  display: grid;
+  grid-template-columns: 1fr 4.5fr 1fr;
+  margin-bottom: 10px; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  body .mainWrapper {
+    width: 100%;
+    position: relative; }
+    body .mainWrapper .mainChatBox {
+      display: grid;
+      grid-template-columns: 1fr;
+      position: fixed;
+      right: 220px;
+      bottom: 0;
+      max-width: 20%;
+      max-height: 100%;
+      box-shadow: 0 0 0.6px grey; }
+      body .mainWrapper .mainChatBox .header {
+        background: #edeef1;
+        color: #7f8081;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr; }
+        body .mainWrapper .mainChatBox .header .settings {
+          visibility: hidden;
+          background: white;
+          position: absolute;
+          text-align: left;
+          margin-top: 10px;
+          padding: 15px;
+          line-height: 1.5em;
+          font-size: 1.2em;
+          z-index: 1;
+          top: 63%;
+          left: 70%;
+          width: fit-content;
+          border: 1px solid black; }
+          body .mainWrapper .mainChatBox .header .settings ul li:nth-child(2) {
+            padding-bottom: 8px;
+            border-bottom: 1px solid #9a9ea5; }
+          body .mainWrapper .mainChatBox .header .settings ul li:nth-child(3) {
+            padding-top: 8px; }
+          body .mainWrapper .mainChatBox .header .settings ul li:nth-child(7) {
+            padding-bottom: 8px;
+            border-bottom: 1px solid #9a9ea5; }
+          body .mainWrapper .mainChatBox .header .settings ul li:nth-child(8) {
+            padding-top: 8px; }
+          body .mainWrapper .mainChatBox .header .settings ul li:hover {
+            background: #4267b2;
+            width: 100%;
+            color: white;
+            padding: 5px;
+            transition-duration: 0.5s; }
+        body .mainWrapper .mainChatBox .header .headerName {
+          display: grid;
+          grid-template-columns: 0.01fr 1fr; }
+          body .mainWrapper .mainChatBox .header .headerName p {
+            font-size: 13px;
+            margin: auto 0;
+            position: relative; }
+            body .mainWrapper .mainChatBox .header .headerName p .tooltipHeader {
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              visibility: hidden;
+              position: absolute;
+              background-color: black;
+              color: #fff;
+              text-align: center;
+              border-radius: 6px;
+              padding: 8px;
+              z-index: 1;
+              bottom: 150%;
+              left: 0%;
+              width: max-content;
+              font-size: 12px;
+              font-weight: 500;
+              font-size: 12px; }
+              body .mainWrapper .mainChatBox .header .headerName p .tooltipHeader::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 20%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: black transparent transparent transparent; }
+            body .mainWrapper .mainChatBox .header .headerName p:hover {
+              text-decoration: underline;
+              cursor: pointer;
+              transition-duration: 1s; }
+              body .mainWrapper .mainChatBox .header .headerName p:hover .tooltipHeader {
+                visibility: visible;
+                font-weight: 500; }
+          body .mainWrapper .mainChatBox .header .headerName i {
+            font-size: 7px;
+            margin: auto;
+            color: #42b72a;
+            margin-right: 3px; }
+        body .mainWrapper .mainChatBox .header .headerOptions {
+          text-align: end;
+          font-size: 12px; }
+          body .mainWrapper .mainChatBox .header .headerOptions i {
+            margin-left: 6px; }
+            body .mainWrapper .mainChatBox .header .headerOptions i:nth-child(1) .tooltipHeader {
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              visibility: hidden;
+              position: absolute;
+              background-color: black;
+              color: #fff;
+              text-align: center;
+              border-radius: 6px;
+              padding: 8px;
+              z-index: 1;
+              bottom: 90%;
+              left: 52%;
+              width: max-content;
+              font-size: 12px;
+              font-weight: 500;
+              font-size: 12px; }
+              body .mainWrapper .mainChatBox .header .headerOptions i:nth-child(1) .tooltipHeader::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 20%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: black transparent transparent transparent; }
+            body .mainWrapper .mainChatBox .header .headerOptions i:nth-child(2) .tooltipHeader {
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              visibility: hidden;
+              position: absolute;
+              background-color: black;
+              color: #fff;
+              text-align: center;
+              border-radius: 6px;
+              padding: 8px;
+              z-index: 1;
+              bottom: 90%;
+              left: 58%;
+              width: max-content;
+              font-size: 12px;
+              font-weight: 500;
+              font-size: 12px; }
+              body .mainWrapper .mainChatBox .header .headerOptions i:nth-child(2) .tooltipHeader::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 20%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: black transparent transparent transparent; }
+            body .mainWrapper .mainChatBox .header .headerOptions i:nth-child(3) .tooltipHeader {
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              visibility: hidden;
+              position: absolute;
+              background-color: black;
+              color: #fff;
+              text-align: center;
+              border-radius: 6px;
+              padding: 8px;
+              z-index: 1;
+              bottom: 90%;
+              left: 67%;
+              width: max-content;
+              font-size: 12px;
+              font-weight: 500;
+              font-size: 12px; }
+              body .mainWrapper .mainChatBox .header .headerOptions i:nth-child(3) .tooltipHeader::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 20%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: black transparent transparent transparent; }
+            body .mainWrapper .mainChatBox .header .headerOptions i:nth-child(4):hover ~ .settings {
+              visibility: visible; }
+            body .mainWrapper .mainChatBox .header .headerOptions i:nth-child(5) .tooltipHeader {
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              visibility: hidden;
+              position: absolute;
+              background-color: black;
+              color: #fff;
+              text-align: center;
+              border-radius: 6px;
+              padding: 8px;
+              z-index: 1;
+              bottom: 90%;
+              left: 86%;
+              width: max-content;
+              font-size: 12px;
+              font-weight: 500;
+              font-size: 12px; }
+              body .mainWrapper .mainChatBox .header .headerOptions i:nth-child(5) .tooltipHeader::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 20%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: black transparent transparent transparent; }
+            body .mainWrapper .mainChatBox .header .headerOptions i:hover {
+              color: black;
+              cursor: pointer;
+              transition-duration: 1s; }
+              body .mainWrapper .mainChatBox .header .headerOptions i:hover .tooltipHeader {
+                visibility: visible; }
+      body .mainWrapper .mainChatBox .output {
+        overflow-y: scroll;
+        height: 240px;
+        box-shadow: 0 0 0.6px grey;
+        display: grid;
+        grid-template-columns: 1fr; }
+        body .mainWrapper .mainChatBox .output .date {
+          font-size: 10px;
+          font-weight: bold; }
+        body .mainWrapper .mainChatBox .output .user .userImage {
+          position: relative;
+          margin-top: auto; }
+          body .mainWrapper .mainChatBox .output .user .userImage .tooltipUserImage {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            visibility: hidden;
+            position: absolute;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            z-index: 3;
+            bottom: 16%;
+            right: 100%;
+            width: max-content;
+            font-size: 12px; }
+            body .mainWrapper .mainChatBox .output .user .userImage .tooltipUserImage::after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 100%;
+              margin-top: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: transparent transparent transparent black; }
+          body .mainWrapper .mainChatBox .output .user .userImage img {
+            border-radius: 50%;
+            width: 80%; }
+            body .mainWrapper .mainChatBox .output .user .userImage img:hover ~ .tooltipUserImage {
+              visibility: visible; }
+        body .mainWrapper .mainChatBox .output .userMessage .userMessageContent {
+          background: #f1f0f0;
+          padding: 10px;
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
+          max-width: 90%;
+          width: fit-content;
+          word-break: break-word;
+          font-size: 14px;
+          margin-top: 1px; }
+          body .mainWrapper .mainChatBox .output .userMessage .userMessageContent:first-child {
+            border-top-left-radius: 15px; }
+          body .mainWrapper .mainChatBox .output .userMessage .userMessageContent:last-child {
+            border-bottom-left-radius: 15px; }
+        body .mainWrapper .mainChatBox .output .userMessage .thumbUp {
+          color: #4080ff;
+          font-size: 30px;
+          background: transparent; }
+        body .mainWrapper .mainChatBox .output .userMessage:hover + .userMessageIcons {
+          visibility: visible;
+          transition-duration: 0.5s; }
+        body .mainWrapper .mainChatBox .output .userMessageIcons {
+          margin: auto;
+          visibility: hidden; }
+          body .mainWrapper .mainChatBox .output .userMessageIcons i {
+            font-size: 14px; }
+          body .mainWrapper .mainChatBox .output .userMessageIcons:hover {
+            visibility: visible; }
+      body .mainWrapper .mainChatBox .myself .tooltipMyself {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        visibility: hidden;
+        position: absolute;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px;
+        z-index: 1;
+        bottom: 54%;
+        left: 93%;
+        width: max-content;
+        font-size: 12px; }
+        body .mainWrapper .mainChatBox .myself .tooltipMyself::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 100%;
+          margin-top: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: transparent black transparent transparent; }
+      body .mainWrapper .mainChatBox .myself .myselfMessage .myselfMessageContent {
+        position: relative;
+        background: #4080ff;
+        padding: 10px;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        max-width: 90%;
+        width: fit-content;
+        word-break: break-word;
+        font-size: 14px;
+        margin-top: 1px;
+        color: white;
+        margin-left: auto; }
+        body .mainWrapper .mainChatBox .myself .myselfMessage .myselfMessageContent:first-child {
+          border-top-right-radius: 15px; }
+        body .mainWrapper .mainChatBox .myself .myselfMessage .myselfMessageContent:last-child {
+          border-bottom-right-radius: 15px; }
+      body .mainWrapper .mainChatBox .myself .myselfMessage:hover + .tooltipMyself {
+        visibility: visible; }
+      body .mainWrapper .mainChatBox .myself .myselfMessageIcons {
+        margin: auto;
+        margin-right: 10px;
+        visibility: hidden; }
+        body .mainWrapper .mainChatBox .myself .myselfMessageIcons i {
+          font-size: 14px; }
+      body .mainWrapper .mainChatBox .seenStatus {
+        color: #9a9ea5;
+        font-size: 12px;
+        text-align: right;
+        margin-top: -4px; }
+    body .mainWrapper .input textarea {
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 5px;
+      width: 94%;
+      color: #9a9ea5;
+      resize: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body .mainWrapper .footer {
+      color: #9a9ea5;
+      background: transparent;
+      padding: 8px; }
+      body .mainWrapper .footer i {
+        font-size: 20px;
+        margin-right: 8px; }
+        body .mainWrapper .footer i:nth-child(1) .tooltipFooter {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          visibility: hidden;
+          position: absolute;
+          background-color: white;
+          color: black;
+          text-align: center;
+          border-radius: 1px;
+          border: 1px solid black;
+          padding: 5px;
+          z-index: 1;
+          bottom: 0%;
+          left: 7%;
+          width: max-content;
+          font-size: 12px; }
+        body .mainWrapper .footer i:nth-child(2) .tooltipFooter {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          visibility: hidden;
+          position: absolute;
+          background-color: white;
+          color: black;
+          text-align: center;
+          border-radius: 1px;
+          border: 1px solid black;
+          padding: 5px;
+          z-index: 1;
+          bottom: 0%;
+          left: 19%;
+          width: max-content;
+          font-size: 12px; }
+        body .mainWrapper .footer i:nth-child(3) .tooltipFooter {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          visibility: hidden;
+          position: absolute;
+          background-color: white;
+          color: black;
+          text-align: center;
+          border-radius: 1px;
+          border: 1px solid black;
+          padding: 5px;
+          z-index: 1;
+          bottom: 0%;
+          left: 30%;
+          width: max-content;
+          font-size: 12px; }
+        body .mainWrapper .footer i:nth-child(4) .tooltipFooter {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          visibility: hidden;
+          position: absolute;
+          background-color: white;
+          color: black;
+          text-align: center;
+          border-radius: 1px;
+          border: 1px solid black;
+          padding: 5px;
+          z-index: 1;
+          bottom: 0%;
+          left: 42%;
+          width: max-content;
+          font-size: 12px; }
+        body .mainWrapper .footer i:nth-child(5) .tooltipFooter {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          visibility: hidden;
+          position: absolute;
+          background-color: white;
+          color: black;
+          text-align: center;
+          border-radius: 1px;
+          border: 1px solid black;
+          padding: 5px;
+          z-index: 1;
+          bottom: 0%;
+          left: 54%;
+          width: max-content;
+          font-size: 12px; }
+        body .mainWrapper .footer i:nth-child(6) .tooltipFooter {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          visibility: hidden;
+          position: absolute;
+          background-color: white;
+          color: black;
+          text-align: center;
+          border-radius: 1px;
+          border: 1px solid black;
+          padding: 5px;
+          z-index: 1;
+          bottom: 0%;
+          left: 66%;
+          width: max-content;
+          font-size: 12px; }
+        body .mainWrapper .footer i:nth-child(7) .tooltipFooter {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          visibility: hidden;
+          position: absolute;
+          background-color: white;
+          color: black;
+          text-align: center;
+          border-radius: 1px;
+          border: 1px solid black;
+          padding: 5px;
+          z-index: 1;
+          bottom: 0%;
+          left: 77%;
+          width: max-content;
+          font-size: 12px; }
+        body .mainWrapper .footer i:nth-child(8) .tooltipFooter {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          visibility: hidden;
+          position: absolute;
+          background-color: white;
+          color: black;
+          text-align: center;
+          border-radius: 1px;
+          border: 1px solid black;
+          padding: 5px;
+          z-index: 1;
+          bottom: 0%;
+          left: 93%;
+          width: max-content;
+          font-size: 12px; }
+        body .mainWrapper .footer i:hover {
+          color: black;
+          cursor: pointer;
+          transition-duration: 1s; }
+          body .mainWrapper .footer i:hover .tooltipFooter {
+            visibility: visible; }
+      body .mainWrapper .footer .thumbUpFooter {
+        float: right;
+        color: #4080ff;
+        margin-right: 0; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,24 @@
+%contentWrapper {
+    padding: 10px;
+}
+
+%date {
+    color: $color-lightgrey;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+%me {
+    @include grid-col-n(1fr 2.25fr);
+
+    margin-bottom: 10px;
+}
+
+%user {
+    color: grey;
+
+    @include grid-col-n(1fr 4.5fr 1fr);
+
+    margin-bottom: 10px;
+}

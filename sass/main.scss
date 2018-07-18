@@ -1,0 +1,312 @@
+@import "variables";
+@import "mixin";
+@import "extension";
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    .mainWrapper {
+        width: 100%;
+        position: relative;
+
+        .mainChatBox {
+            @include grid-col-n(1fr);
+
+            position: fixed;
+            right: 220px;
+            bottom: 0;
+            max-width: 20%;
+            max-height: 100%;
+            box-shadow: $border;
+
+            .header {
+                background: #edeef1;
+                color: #7f8081;
+                position: relative;
+
+                @include grid-col-n(1fr 1fr);
+
+                @extend %contentWrapper;
+
+                @include tooltipSettings;
+
+                .headerName {
+                    @include grid-col-n(0.01fr 1fr);
+
+                    p {
+                        font-size: 13px;
+                        margin: auto 0;
+                        position: relative;
+
+                        @include tooltip-header(150%, 0%);
+
+                        &:hover {
+                            text-decoration: underline;
+                            cursor: pointer;
+                            transition-duration: 1s;
+
+                            .tooltipHeader {
+                                visibility: visible;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+
+                    i {
+                        font-size: 7px;
+                        margin: auto;
+                        color: #42b72a;
+                        margin-right: 3px;
+                    }
+                }
+
+                .headerOptions {
+                    text-align: end;
+                    font-size: 12px;
+
+                    i {
+                        margin-left: 6px;
+
+                        &:nth-child(1) {
+                            @include tooltip-header(90%, 52%);
+                        }
+
+                        &:nth-child(2) {
+                            @include tooltip-header(90%, 58%);
+                        }
+
+                        &:nth-child(3) {
+                            @include tooltip-header(90%, 67%);
+                        }
+
+                        &:nth-child(4):hover ~ .settings {
+                            visibility: visible;
+                        }
+
+                        &:nth-child(5) {
+                            @include tooltip-header(90%, 86%);
+                        }
+
+                        &:hover {
+                            color: black;
+                            cursor: pointer;
+                            transition-duration: 1s;
+
+                            .tooltipHeader {
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .output {
+                overflow-y: scroll;
+                height: 240px;
+                box-shadow: $border;
+
+                @include grid-col-n(1fr);
+
+                @extend %contentWrapper;
+
+                .date {
+                    @extend %date;
+
+                    font-size: 10px;
+                    font-weight: bold;
+                }
+
+                .user {
+                    @extend %user;
+
+                    .userImage {
+                        position: relative;
+
+                        @include tooltip-user(16%, 100%);
+
+                        margin-top: auto;
+
+                        img {
+                            border-radius: 50%;
+                            width: 80%;
+
+                            &:hover ~ .tooltipUserImage {
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+
+                .userMessage {
+                    .userMessageContent {
+                        @include messageContentUser;
+
+                        &:first-child {
+                            border-top-left-radius: 15px;
+                        }
+
+                        &:last-child {
+                            border-bottom-left-radius: 15px;
+                        }
+                    }
+
+                    .thumbUp {
+                        color: $color-blue;
+                        font-size: 30px;
+                        background: transparent;
+                    }
+
+                    &:hover + .userMessageIcons {
+                        visibility: visible;
+                        transition-duration: 0.5s;
+                    }
+                }
+
+                .userMessageIcons {
+                    margin: auto;
+                    visibility: hidden;
+
+                    i {
+                        font-size: 14px;
+                    }
+
+                    &:hover {
+                        visibility: visible;
+                    }
+                }
+            }
+
+            .myself {
+                @extend %me;
+
+                // position: relative;
+                @include tooltip-myself(54%, 93%);
+
+                .myselfMessage {
+                    .myselfMessageContent {
+                        position: relative;
+
+                        @include messageContentMyself;
+
+                        color: white;
+                        margin-left: auto;
+
+                        &:first-child {
+                            border-top-right-radius: 15px;
+                        }
+
+                        &:last-child {
+                            border-bottom-right-radius: 15px;
+                        }
+                    }
+
+                    //issue to be solved
+                    &:hover + .tooltipMyself {
+                        // .tooltipMyself {
+                        visibility: visible;
+
+                        // }
+                   
+                    }
+
+                    // &:hover {
+                    //     .myselfMessageIcons {
+                    //         visibility: visible;
+                    //         transition-duration: 0.5s;
+                    //     }
+                    // }
+               
+                }
+
+                .myselfMessageIcons {
+                    margin: auto;
+                    margin-right: 10px;
+                    visibility: hidden;
+
+                    i {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .seenStatus {
+                color: $color-lightgrey;
+                font-size: 12px;
+                text-align: right;
+                margin-top: -4px;
+            }
+        }
+
+        .input {
+            textarea {
+                background: transparent;
+                border: none;
+                outline: none;
+                padding: 5px;
+                width: 94%;
+                color: $color-lightgrey;
+                resize: none;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+        }
+
+        .footer {
+            color: $color-lightgrey;
+            background: transparent;
+            padding: 8px;
+
+            i {
+                font-size: 20px;
+                margin-right: 8px;
+
+                &:nth-child(1) {
+                    @include tooltip-footer(0%, 7%);
+                }
+
+                &:nth-child(2) {
+                    @include tooltip-footer(0%, 19%);
+                }
+
+                &:nth-child(3) {
+                    @include tooltip-footer(0%, 30%);
+                }
+
+                &:nth-child(4) {
+                    @include tooltip-footer(0%, 42%);
+                }
+
+                &:nth-child(5) {
+                    @include tooltip-footer(0%, 54%);
+                }
+
+                &:nth-child(6) {
+                    @include tooltip-footer(0%, 66%);
+                }
+
+                &:nth-child(7) {
+                    @include tooltip-footer(0%, 77%);
+                }
+
+                &:nth-child(8) {
+                    @include tooltip-footer(0%, 93%);
+                }
+
+                &:hover {
+                    color: black;
+                    cursor: pointer;
+                    transition-duration: 1s;
+
+                    .tooltipFooter {
+                        visibility: visible;
+                    }
+                }
+            }
+
+            .thumbUpFooter {
+                float: right;
+                color: $color-blue;
+                margin-right: 0;
+            }
+        }
+    }
+}
